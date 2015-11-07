@@ -1,0 +1,20 @@
+As it was obvious that problem belonged to the category of Constraint Satisfaction Problem, So
+I decided to solve it by applying backtracking. Now, to reduce the number of backtracks and time 
+elapsed, I have used stateiable ordering i.e MRV (Minimum Remaining Values) and assigned LCV (Least 
+Constraining Value) to the stateiable first. For choosing the value for a state, I am also checking 
+whether this assignment causes any future conflicts with it's neighbor or not. By checking Arc 
+consistency, I have ensured that all  the future constraint violation is detected as early as
+possible and remove all the conflicting  frequency from the domains of all other states. I am also
+checking whether with given legacy constraint solution is feasible or not before searching for the 
+solution by calling arc consistency function. All these preprocessing helped into reducing the number 
+of bactracks. Now this program makes no backtrack and gives the solution in first attempt for all 
+the test cases provided.
+
+Assumptions:  For adjacent states file, I have hard coded the filename. So, In order to run the program
+with different file, change the name of the file in the load_data function. Similarly, for output file
+I have hardcoded the name of output file as "results.txt".
+
+Analysis: This program works really well. As for given all the test cases, it makes no backtrack and
+takes time even less than 0.1 second. It can be further improved by taking the advantage of structure
+and removing some of the stateiables to convert rest of the graph into a tree. This may result into even 
+lesser time.
