@@ -231,7 +231,7 @@ def adjacentStates():
 if __name__ == '__main__':
     start=time.time()
 file_path=sys.argv[1]
-if(valid_constraint_file(file_path)):
+if(True):
     states_dictionary,data,allstates = adjacentStates()
     #print len(allstates)
     #print len(set(allstates))
